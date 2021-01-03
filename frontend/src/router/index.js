@@ -4,12 +4,10 @@ import Home from '@/views/Home.vue'
 import Account from '@/views/Account.vue'
 import Login from '@/views/Login.vue' 
 import Cart from '@/views/Cart.vue' 
-import Axios from 'axios'
+
 
 
 Vue.use(VueRouter)
-
-Axios.defaults.baseURL = 'http://localhost:8000/api/';
 
   const routes = [
   {
