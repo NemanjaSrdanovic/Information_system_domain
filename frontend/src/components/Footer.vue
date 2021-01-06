@@ -1,6 +1,6 @@
 <template>
 
-<footer class="bg-dark text-white pt-5 pb-4" style="margin-top: 100px;">
+<footer class="bg-dark text-white pt-5 pb-4" style="margin-top: 70px;">
 
     <div class="containter text-center text-md-left">
         <div class="row text-center text-md-left">

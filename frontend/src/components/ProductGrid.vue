@@ -5,9 +5,9 @@
     <div class="card text-white bg-dark ms-3 border-primary" style="max-width: 18rem;">
       <img src="@/assets/cardImg.jpg" class="card-img-top" alt="...">
       <div class="card-body">
-        <h5 class="card-title">{{product.title}}</h5>
+        <h5 class="card-title">{{product.name}}</h5>
         <p class="card-text">{{product.description}}</p>
-      <a href="#" class="btn btn-primary">Add to Cart</a>
+      <a class="btn btn-primary" v-on:click="addItemToCart(product.id)">Add to Cart</a>
       </div>
     </div>
   </div>  
@@ -42,15 +42,17 @@
 
 <script>
 
-//import axios from 'axios';
-import ProductService from '@/services/ProductService';
+ import ProductService from '@/services/ProductService';
+ import CartService from '@/services/CartService';
+ import axios from 'axios';
 
 export default {
   
   data(){
     return{
-      products:[ //37
-         {title:'Lenovo', description:'Page 1'},
+      products:[ //24 
+      /*
+        {title:'Lenovo', description:'Page 1'},
         {title:'Samsung', description:'Page 1'},
         {title:'Nokia', description:'Page 1'},
         {title:'Apple', description:'Page 1'},
@@ -88,7 +90,7 @@ export default {
         {title:'Amazon', description:'Page 3.'},
         {title:'Amazon', description:'Page 4.'}
         
-        
+      */  
       ],
       pageProducts:[],
       page:0,
@@ -99,28 +101,39 @@ export default {
   methods: {
 
     getProducts(){
-
          ProductService.getProducts()
         .then(response => this.products=response.data)
         .catch(error => {console.log(error);  
         })
     },
 
-    setPageItems(){
-     
+    setPageItems(){     
      this.pageProducts = this.products.slice(this.page*this.itemsPerPage, (this.page*this.itemsPerPage) +this.itemsPerPage);
     },
 
     setPageNum(pageNum){
+
       if(pageNum==Math.ceil(this.products.length/this.itemsPerPage)) this.page=Math.ceil((this.products.length/this.itemsPerPage)-1);
       else if(pageNum<0) this.page=0;
         else this.page=pageNum;
-    }
+    },
+
+
+addItemToCart(id){
+
+         CartService.addCartItem(id)
+        .then(response => console.log(response))
+        .catch(error => {console.log(error);  
+        })
+  }
 
   },
 
     beforeMount(){
-   // this.getProducts()
+
+    axios.get('http://localhost:8000/login/mayo@gmail.com/123456') // OBRISATI
+
+    this.getProducts()
     this.setPageItems() 
     }
 }

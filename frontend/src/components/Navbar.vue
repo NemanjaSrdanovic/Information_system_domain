@@ -54,4 +54,6 @@ export default {
   color: tomato;
   font-weight: bold;
 }
+
 </style>
+

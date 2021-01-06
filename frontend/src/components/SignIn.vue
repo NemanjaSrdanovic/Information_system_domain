@@ -86,7 +86,7 @@ import axios from 'axios';
 
   .container {
     position: relative;
-    top: 80px;
+    top: 100px;
     width: 1300px;
     height: 500px;
     bottom: 20px;
@@ -95,6 +95,7 @@ import axios from 'axios';
     box-shadow: 0 15px 30px rgba(0, 0, 0, .2),
                 0 10px 10px rgba(0, 0, 0, .2);
     background: linear-gradient(to bottom, #efefef, #ccc);
+    margin-bottom: 150px;
     
     
     .overlay-container {
