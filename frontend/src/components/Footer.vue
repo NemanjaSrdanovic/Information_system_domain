@@ -13,7 +13,7 @@
 
             <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mt-3">
                 <h5 class="text-uppercase mb-4" style="color:#339BFF; font-weight:bold;">technologies</h5>
-                <p>Bootstrap 5</p>
+                <p>Bootstrap</p>
                 <p>Css</p>
                 <p>JavaScript</p>
             </div>
