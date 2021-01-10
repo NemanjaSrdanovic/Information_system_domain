@@ -3,7 +3,7 @@ import axios from 'axios'
 export default () => {
     return axios.create({
         baseURL: 'http://localhost:8000',
-    /*    
+       
         headers: {
         
         "Access-Control-Allow-Origin": "*",
@@ -11,6 +11,6 @@ export default () => {
         "Access-Control-Allow-Headers": "Accept, Content-Type, Content-Length, Accept-Encoding, X-CSRF-Token, Authorization",
         'content-type': 'application/json'
     }
-    */    
+       
     })
 }

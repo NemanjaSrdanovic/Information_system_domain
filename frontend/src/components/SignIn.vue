@@ -1,258 +1,126 @@
 <template>
-  <article>
-    <div class="container" :class="{'sign-up-active' : signUp}">
-      <div class="overlay-container">
-        <div class="overlay">
-          <div class="overlay-left">
-            <h2>Welcome Back!</h2>
-            <p>Please login with your personal info</p>
-            <button class="invert" id="signIn" @click="signUp = !signUp">Sign In</button>
-          </div>
-          <div class="overlay-right">
-            <h2>Hello, Friend!</h2>
-            <p>Please enter your personal details</p>
-            <button class="invert" id="signUp" @click="signUp = !signUp">Sign Up</button>
+  <section>
+    <div class="row" style="justify-content: center">
+      <div class="col-lg-6" style="margin-top: 150px; margin-bottom: 450px">
+        <div class="card text-white bg-dark border-primary ">
+          <img src="@/assets/LoginImg.jpg" class="card-img-left" alt="..." />
+          <div class="card-body" style="margin-top:50px">
+            <h4 class="title text-center mt-4">Log in to your account</h4>
+            <form class="form-box px-3">
+              <div class="form-input">
+                <span><i class="fa fa-envelope"></i></span>
+                <input
+                  type="email"
+                  name=""
+                  placeholder="E-Mail"
+                  tabindex="10"
+                  required
+                />
+              </div>
+
+              <div class="form-input">
+                <span><i class="fa fa-key"></i></span>
+                <input
+                  type="password"
+                  name=""
+                  placeholder="Password"
+                  required
+                />
+              </div>
+
+              <div class="mb-3">
+                <div class="custom-control custom-checkbox">
+                  <input
+                    type="checkbox"
+                    class="custom-control-input"
+                    id="cb1"
+                    name=""
+                  />
+                  <label class="custom-control-label" for="cb1"
+                    >Remember login</label
+                  >
+                </div>
+              </div>
+
+              <div class="mb-3">
+                <button type="button" class="btn btn-primary">Login</button>
+              </div>
+
+              <div class="text-center">
+                <a href="#" class="forget-link">Forgot password.</a>
+              </div>
+
+              <div class="text-center mb-2">
+                Still no account?
+                <a href="#" class="register-link">Register here</a>
+              </div>
+            </form>
           </div>
         </div>
       </div>
-
-    <!-- Create Login -->
-      <form class="sign-up" action="#" @submit.prevent="registerUser">
-        <h2>Create login</h2>
-        <div>Use your email for registration</div>
-        <input type="text" placeholder="Name" v-model="name"/>
-        <input type="email" placeholder="Email" v-model="email"/>
-        <input type="password" placeholder="Password" v-model="password"/>
-        <button>Sign Up</button>
-      </form>
-
-    <!-- Sign in -->
-      <form class="sign-in" action="#">
-        <h2>Sign In</h2>
-        <div>Use your account</div>
-        <input type="email" placeholder="Email" v-model="email"/>
-        <input type="password" placeholder="Password" v-model="password"/>
-        <a href="#">Forgot your password?</a>
-        <button>Sign In</button>
-      </form>
     </div>
-  </article>
+  </section>
 </template>
 
-<script>
+<style scoped>
+.card {
+  flex-direction: row;
+  border-radius: 20px !important;
+  height: 550px;
+}
 
-import axios from 'axios';
-  export default {
-    data: () => {
-      return {
+.card img {
+  width: 50%;
+  border-top-left-radius: 20px !important;
+  border-bottom-left-radius: 20px !important;
+}
 
-        signUp: false,
-        
-        name:"",
-          email:"",
-           password:""
-      
-/*
-        registerData:{
-         name:"",
-          email:"",
-           password:""
-        }
-*/
+.card-body {
+  padding: 2rem;
+}
 
-      }
-    },
+.title {
+  margin-bottom: 2rem;
+}
 
-    methods: {
+.form-input {
+  position: relative;
+}
 
-      registerUser(){
+.form-input input {
+  width: 100%;
+  height: 45px;
+  padding-left: 40px;
+  margin-bottom: 20px;
+  box-sizing: border-box;
+  box-shadow: none;
+  border: 1px solid #00000020;
+  border-radius: 50px;
+  outline: none;
+  background: transparent;
+  border-color: #007bff;
+}
 
-        axios.post('http://localhost:8000/api/', {
-          email: this.email,
-          password: this.password
-        }).then(response => {
-          console.log(response);
-        }).catch(error => {
-          console.log(error);  
-        })
-      }
+.form-input span {
+  position: absolute;
+  top: 10px;
+  padding-left: 15px;
+  color: #007bff;
+}
 
-    }
-  }
-</script>
+.form-input input:focus::placeholder {
+  color: #454b69;
+}
 
-<style lang="scss" scoped>
+.forget-link,
+.register-link {
+  color: #007bff;
+  font-weight: bold;
+}
 
-
-  .container {
-    position: relative;
-    top: 100px;
-    width: 1300px;
-    height: 500px;
-    bottom: 20px;
-    border-radius: 10px;
-    overflow: hidden;
-    box-shadow: 0 15px 30px rgba(0, 0, 0, .2),
-                0 10px 10px rgba(0, 0, 0, .2);
-    background: linear-gradient(to bottom, #efefef, #ccc);
-    margin-bottom: 150px;
-    
-    
-    .overlay-container {
-      position: absolute;
-      top: 0;
-      left: 50%;
-      width: 50%;
-      height: 100%;
-      overflow: hidden;
-      transition: transform .5s ease-in-out;
-      z-index: 100;
-    }
-    .overlay {
-      position: relative;
-      left: -100%;
-      height: 100%;
-      width: 200%;
-      background: linear-gradient(to bottom right, #344DD1, #009345);
-      color: #fff;
-      transform: translateX(0);
-      transition: transform .5s ease-in-out;
-    }
-    @mixin overlays($property) {
-      position: absolute;
-      top: 0;
-      display: flex;
-      align-items: center;
-      justify-content: space-around;
-      flex-direction: column;
-      padding: 70px 40px;
-      width: calc(50% - 0px);
-      height: calc(100% - -20px);
-      text-align: center;
-      transform: translateX($property);
-      transition: transform .5s ease-in-out;
-    }
-    .overlay-left {
-      @include overlays(-20%);
-    }
-    .overlay-right {
-      @include overlays(0);
-      right: 0;
-    }
-  }
-  h2 {
-    margin: 0;
-  }
-  p {
-    margin: 20px 0 30px;
-  }
-  a {
-    color: #222;
-    text-decoration: none;
-    margin: 15px 0;
-    font-size: 1rem;
-  }
-  button {
-    border-radius: 20px;
-    border: 1px solid #0286A1;
-    background-color: #099BB9;
-    color: #fff;
-    font-size: 1rem;
-    font-weight: bold;
-    padding: 10px 40px;
-    letter-spacing: 1px;
-    text-transform: uppercase;
-    cursor: pointer;
-    transition: transform .1s ease-in;
-    &:active {
-      transform: scale(.9);
-    }
-    &:focus {
-      outline: none;
-    }
-  }
-  button.invert {
-    background-color: transparent;
-    border-color: #fff;
-  }
-  form {
-    position: absolute;
-    top: 0;
-    display: flex;
-    align-items: center;
-    justify-content: space-around;
-    flex-direction: column;
-    padding: 90px 60px;
-    width: calc(50% - 0px);
-    height: calc(100% - 0px);
-    text-align: center;
-    background: linear-gradient(to bottom, #A9A9A9, #BABABA);
-    transition: all .5s ease-in-out;
-    div {
-      font-size: 1rem;
-    }
-    input {
-      background-color: #eee;
-      border: none;
-      padding: 8px 15px;
-      margin: 6px 0;
-      width: calc(100% - 30px);
-      border-radius: 15px;
-      border-bottom: 1px solid #ddd;
-      box-shadow: inset 0 1px 2px rgba(0, 0, 0, .4), 
-                        0 -1px 1px #fff, 
-                        0 1px 0 #fff;
-      overflow: hidden;
-      &:focus {
-        outline: none;
-        background-color: #fff;
-      }
-    }
-  }
-  .sign-in {
-    left: 0;
-    z-index: 2;
-  }
-  .sign-up {
-    left: 0;
-    z-index: 1;
-    opacity: 0;
-  }
-  .sign-up-active {
-    .sign-in {
-      transform: translateX(100%);
-    }
-    .sign-up {
-      transform: translateX(100%);
-      opacity: 1;
-      z-index: 5;
-      animation: show .5s;
-    }
-    .overlay-container {
-      transform: translateX(-100%);
-    }
-    .overlay {
-      transform: translateX(50%);
-    }
-    .overlay-left {
-      transform: translateX(0);
-    }
-    .overlay-right {
-      transform: translateX(20%);
-    }
-  }
-  @keyframes show {
-    0% {
-      opacity: 0;
-      z-index: 1;
-    }
-    49% {
-      opacity: 0;
-      z-index: 1;
-    }
-    50% {
-      opacity: 1;
-      z-index: 10;
-    }
-  }
+.forget-link:hover,
+.register-link:hover {
+  color: #0069d9;
+  text-decoration: none;
+}
 </style>
