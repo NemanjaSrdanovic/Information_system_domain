@@ -3,6 +3,7 @@ import VueRouter from 'vue-router'
 import Home from '@/views/Home.vue'
 import Account from '@/views/Account.vue'
 import Login from '@/views/Login.vue' 
+import Register from '@/views/Register.vue' 
 import Cart from '@/views/Cart.vue' 
 import Axios from 'axios'
 
@@ -26,6 +27,11 @@ Axios.defaults.baseURL = 'http://localhost:8000/api/';
     path: '/login',
     name: 'Login',
     component: Login
+  },
+  {
+    path: '/register',
+    name: 'Register',
+    component: Register
   },
   {
     path: '/cart',

@@ -2,9 +2,9 @@
   <section>
     <div class="row" style="justify-content: center">
       <div class="col-lg-6" style="margin-top: 150px; margin-bottom: 450px">
-        <div class="card text-white bg-dark border-primary ">
+        <div class="card text-white bg-dark border-primary">
           <img src="@/assets/LoginImg.jpg" class="card-img-left" alt="..." />
-          <div class="card-body" style="margin-top:50px">
+          <div class="card-body" style="margin-top: 50px">
             <h4 class="title text-center mt-4">Log in to your account</h4>
             <form class="form-box px-3">
               <div class="form-input">
@@ -28,7 +28,7 @@
                 />
               </div>
 
-              <div class="mb-3">
+              <div class="mb-3 text-center">
                 <div class="custom-control custom-checkbox">
                   <input
                     type="checkbox"
@@ -36,14 +36,18 @@
                     id="cb1"
                     name=""
                   />
-                  <label class="custom-control-label" for="cb1"
+                  <label class="custom-control-label text-center" for="cb1"
                     >Remember login</label
                   >
                 </div>
               </div>
 
-              <div class="mb-3">
-                <button type="button" class="btn btn-primary">Login</button>
+              <div class="row" style="justify-content: center">
+                <div class="col-lg-6 mb-5">
+                  <button type="button" class="btn btn-primary btn-block">
+                    Log in
+                  </button>
+                </div>
               </div>
 
               <div class="text-center">
@@ -52,7 +56,9 @@
 
               <div class="text-center mb-2">
                 Still no account?
-                <a href="#" class="register-link">Register here</a>
+                <router-link class="register-link active" to="/register"
+                  >Register here</router-link
+                >
               </div>
             </form>
           </div>
@@ -97,6 +103,7 @@
   border: 1px solid #00000020;
   border-radius: 50px;
   outline: none;
+  color: white;
   background: transparent;
   border-color: #007bff;
 }

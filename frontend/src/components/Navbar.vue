@@ -82,9 +82,8 @@ export default {
   color: dodgerblue;
 }
 
-.navbar .nav-item:hover .nav-link { 
-  color:dodgerblue;
-  }
-
+.navbar .nav-item:hover .nav-link {
+  color: dodgerblue;
+}
 </style>
 

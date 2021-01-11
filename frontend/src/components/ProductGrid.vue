@@ -11,6 +11,7 @@
           <div class="card-body">
             <h5 class="card-title">{{ product.name }}</h5>
             <p class="card-text">{{ product.description }}</p>
+            <p class="card-text">{{ product.price}}€</p>
             <button class="btn btn-primary" type="button" data-container="body" data-toggle="popover" data-placement="top" data-content="Vivamus sagittis lacus vel augue laoreet rutrum faucibus." v-on:click="addItemToCart(product.id)"
               >Add to Cart</button
             >
