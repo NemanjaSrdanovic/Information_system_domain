@@ -97,7 +97,7 @@
       <!--Grid column-->
 
       <!--Grid column-->
-      <div class="col-lg-4" style="margin-top: 100px">
+      <div class="col-lg-4" style="margin-top: 100px; margin-bottom: 450px">
         <!-- Card -->
         <div class="card bg-dark border-primary mb-3">
           <div class="card-body">

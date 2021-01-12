@@ -47,6 +47,13 @@
             <span class="d-none d-sm-inline"><i class="fas fa-tachometer-alt"></i> Dashboard</span>
             </router-link>
           </li>
+
+          <li v-if="userLoggedIn" class="nav-item">
+            <router-link class="nav-link active" to="/user_account">        
+            <span class="d-none d-sm-inline"> <i class="fas fa-user"></i> Account</span>
+            </router-link>
+          </li>
+
           <li v-if="!userLoggedIn && !employeeLoggedIn" class="nav-item">
             <router-link class="nav-link active d-flex flex-column" to="/login">
               <span class="d-none d-sm-inline"><i class="fas fa-sign-in-alt"></i> Log in</span>

@@ -1,5 +1,5 @@
 <template>
-  <section>
+  <section v-if="!userLoggedIn && !employeeLoggedIn">
     <div class="row" style="justify-content: center">
       <div class="col-lg-6" style="margin-top: 150px; margin-bottom: 450px">
         <div class="card text-white bg-dark border-primary">
@@ -67,13 +67,13 @@
 
               <div class="row" style="justify-content: center">
                 <div class="col-lg-6 mb-5">
-                  <button type="button" class="btn btn-primary btn-block" v-on:click="register()">
+                  <button :disabled="!buttonActive()" type="button" class="btn btn-primary btn-block" v-on:click="register()">
                     Sign up
                   </button>
                 </div>
               </div>
               <div class="text-center mb-2">
-                Already have an account?
+                Have an account?
                 <router-link class="register-link active" to="/login"
                   >Log in</router-link
                 >
@@ -85,6 +85,12 @@
       </div>
     </div>
   </section>
+
+  <div v-else>
+    <LoggedIn />
+  </div>
+
+
 </template>
 
 
@@ -92,27 +98,65 @@
 <script>
 
 import AuthService from "@/services/AuthService";
+import LoggedIn from "@/components/LoggedIn.vue";
 
 export default {
   data(){
     return{
       name:'',
       email:'',
-      password:''
+      password:'',
+      userLoggedIn: false,
+      employeeLoggedIn: false,
     };
   },
+
+
+  components: {
+    LoggedIn,
+  },
+
+
   methods:{
 
     register(){
 
         AuthService.register(this.email,this.password, this.name)
-        .then((response) => console.log(response), window.location.href = '/login')
+        .then((response) => console.log(response), window.location.href = '/#/login')
         .catch((error) => {
           console.log(error);
         });
 
+    },
+
+    buttonActive(){
+
+      if(this.name=='' || this.email=='' || this.password=='') return false;
+      else return true;
+    },
+
+    isUserLogedIn() {
+      AuthService.isUserLogedIn()
+        .then((response) => (this.userLoggedIn = response.data))
+        .catch((error) => {
+          console.log(error);
+        });
+    },
+
+    isEmployeeLogedIn() {
+      AuthService.isEmployeeLogedIn()
+        .then((response) => (this.employeeLoggedIn = response.data))
+        .catch((error) => {
+          console.log(error);
+        });
     }
-  }
+
+  },
+
+    beforeMount() {
+    this.isUserLogedIn();
+    this.isEmployeeLogedIn();
+  },
 }
 </script>
 

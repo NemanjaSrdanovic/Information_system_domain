@@ -53,6 +53,12 @@
               >Cart</router-link
             >
           </p>
+
+          <p>
+            <router-link v-if="userLoggedIn" class="nav-link active" to="/user_account"
+              >Account</router-link
+            >
+          </p>
         </div>
 
         <div class="col-md-3 col-lg-2 col-xl-2 mx-auto mt-3">

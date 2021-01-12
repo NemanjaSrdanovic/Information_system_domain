@@ -1,5 +1,5 @@
 <template>
-  <section>
+  <section v-if="!userLoggedIn && !employeeLoggedIn">
     <div class="row" style="justify-content: center">
       <div class="col-lg-6" style="margin-top: 150px; margin-bottom: 450px">
         <div class="card text-white bg-dark border-primary">
@@ -46,7 +46,12 @@
 
               <div class="row" style="justify-content: center">
                 <div class="col-lg-6 mb-5">
-                  <button type="button" class="btn btn-primary btn-block" v-on:click="login()">
+                  <button
+                    :disabled="!buttonActive()"
+                    type="button"
+                    class="btn btn-primary btn-block"
+                    v-on:click="login()"
+                  >
                     Log in
                   </button>
                 </div>
@@ -68,31 +73,66 @@
       </div>
     </div>
   </section>
+
+  <div v-else>
+    <LoggedIn />
+  </div>
 </template>
 
 <script>
 import AuthService from "@/services/AuthService";
+import LoggedIn from "@/components/LoggedIn.vue";
 
 export default {
-  data(){
-    return{
-      email:'',
-      password:''
+  data() {
+    return {
+      email: "",
+      password: "",
+      userLoggedIn: false,
+      employeeLoggedIn: false,
     };
   },
-  methods:{
 
-    login(){
+  components: {
+    LoggedIn,
+  },
 
-        AuthService.login(this.email,this.password)
-        .then((response) => console.log(response), window.location.href = '/')
+  methods: {
+    login() {
+      AuthService.login(this.email, this.password)
+        .then((response) => console.log(response), (window.location.href = "/"))
         .catch((error) => {
           console.log(error);
         });
+    },
 
-    }
-  }
-}
+    isUserLogedIn() {
+      AuthService.isUserLogedIn()
+        .then((response) => (this.userLoggedIn = response.data))
+        .catch((error) => {
+          console.log(error);
+        });
+    },
+
+    isEmployeeLogedIn() {
+      AuthService.isEmployeeLogedIn()
+        .then((response) => (this.employeeLoggedIn = response.data))
+        .catch((error) => {
+          console.log(error);
+        });
+    },
+
+    buttonActive() {
+      if (this.email == "" || this.password == "") return false;
+      else return true;
+    },
+  },
+
+  beforeMount() {
+    this.isUserLogedIn();
+    this.isEmployeeLogedIn();
+  },
+};
 </script>
 
 <style scoped>

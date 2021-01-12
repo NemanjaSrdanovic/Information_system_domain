@@ -24,7 +24,11 @@
                       resetVariables();
                       closeDropdown();
                     "
-                    >Reports
+
+      
+
+                    >  <span class="d-none d-sm-inline">
+                      <i class="fas fa-list-ul"></i> Reports</span>
                   </a>
                   <ul class="collapse list-unstyled" id="homeSubmenu">
                     <li>
@@ -55,7 +59,8 @@
                     data-toggle="collapse"
                     aria-expanded="false"
                     class="dropdown-toggle"
-                    >Products</a
+                    ><span class="d-none d-sm-inline">
+                      <i class="fas fa-laptop"></i> Products</span></a
                   >
                   <ul class="collapse list-unstyled" id="pageSubmenu">
                     <li><a href="#">Add product</a></li>
@@ -63,9 +68,12 @@
                     <li><a href="#">Remove product</a></li>
                   </ul>
                 </li>
-                <li><a href="#">Charts</a></li>
-                <li><a href="#">Profile</a></li>
-                <li><a href="#">Support</a></li>
+                <li><a href="#"><span class="d-none d-sm-inline">
+                      <i class="fas fa-chart-area"></i> Charts</span></a></li>
+                <li><a href="#"><span class="d-none d-sm-inline">
+                      <i class="fas fa-users-cog"></i> Profile</span></a></li>
+                <li><a href="#"><span class="d-none d-sm-inline">
+                      <i class="fas fa-headset"></i> Support</span></a></li>
               </ul>
             </nav>
           </div>
@@ -100,7 +108,17 @@
                 type="button"
                 class="btn btn-primary active btn-sm"
                 style="margin-left: 10px"
-                v-on:click="getCategoryData(range)"
+                v-if="showCategoryTable"   v-on:click="getCategoryData(range)"
+              >
+                Load
+              </button>
+
+
+              <button
+                type="button"
+                class="btn btn-primary active btn-sm"
+                style="margin-left: 10px"
+                v-if="showProductTable"   v-on:click="getProductData(range)"
               >
                 Load
               </button>
@@ -120,13 +138,13 @@
               </thead>
               <tbody>
                 <tr
-                  v-for="(product, index) in categoryReportTable"
+                  v-for="(item, index) in categoryReportTable"
                   :key="index"
                 >
-                  <th scope="row">{{ index }}</th>
-                  <td>{{ product.title }}</td>
-                  <td>{{ product.description }}</td>
-                  <td>1</td>
+                  <th scope="row">{{ index+1 }}</th>
+                    <td>{{item.category}}</td>
+                  <td>{{ item.itemName }}</td>
+                  <td>{{ item.quntity }}</td>   
                 </tr>
               </tbody>
             </table>
@@ -141,11 +159,11 @@
                 </tr>
               </thead>
               <tbody>
-                <tr v-for="(product, index) in productReportTable" :key="index">
-                  <th scope="row">{{ index }}</th>
-                  <td>{{ product.title }}</td>
-                  <td>{{ product.description }}</td>
-                  <td>1</td>
+                <tr v-for="(item, index) in productReportTable" :key="index">
+                  <th scope="row">{{ index+1 }}</th>
+                  <td>{{ item.userName }}</td>
+                  <td>{{ item.itemName }}</td>
+                  <td>{{item.timesBought}}</td>
                 </tr>
               </tbody>
             </table>
@@ -167,6 +185,7 @@
 <script>
 import SignInSignUp from "@/components/SignIn_SignUp.vue";
 import AuthService from "@/services/AuthService";
+import DashboardService from "@/services/DashboardService";
 import DatePicker from "vue2-datepicker";
 import "vue2-datepicker/index.css";
 
@@ -178,26 +197,9 @@ export default {
 
   data() {
     return {
-      products: [
-   
+      products: [],
 
-        { title: "Lenovo", description: "Page 1" },
-        { title: "Samsung", description: "Page 1" },
-        { title: "Nokia", description: "Page 1" },
-        { title: "Apple", description: "Page 1" },
-        { title: "Huawei", description: "Page 1" },
-        { title: "Xiaomi", description: "Page 1." },
-        { title: "Accer", description: "Page 1." },
-        { title: "Assus", description: "Page 1." },
-        { title: "Dell", description: "Page 1." },
-        { title: "Hama", description: "Page 1." },
-        { title: "Levis", description: "Page 1." },
-        { title: "Amazon", description: "Page 1." },
-        { title: "Lenovo", description: "Page 2." },
-        { title: "Samsung", description: "Page 2." },
-      ],
-
-      range: "",
+      range: [],
       showCategoryTable: false,
       showProductTable: false,
       categoryTableId: 1,
@@ -223,12 +225,25 @@ export default {
     },
 
     getCategoryData(range) {
-      console.log("RANGE:");
-      console.log(range);
 
-      //UBACITI AXIOS
+         DashboardService.getCategoryData(range[0], range[1])
+        .then((response) => (this.categoryReportTable = response.data))
+        .catch((error) => {
+          console.log(error);
+        });
+       
+    },
 
-      this.categoryReportTable = this.products.slice(0, 5);
+    
+    getProductData(range) {
+
+         DashboardService.getProductData(range[0], range[1])
+        .then((response) => (this.productReportTable = response.data))
+        .catch((error) => {
+          console.log(error);
+        });
+
+        
     },
 
     resetVariables() {
