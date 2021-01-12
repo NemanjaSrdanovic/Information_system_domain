@@ -25,7 +25,9 @@ export default {
 #app {
   font-family: "Montserrat", sans-serif;
   background-color: black;
+
   position: relative;
   min-height: 100vh;
+
 }
 </style>

@@ -1,6 +1,6 @@
 <template>
   <!--Section: Block Content-->
-  <section style="margin-left: 15px; margin-right: 15px">
+  <section v-if="userLoggedIn" style="margin-left: 15px; margin-right: 15px">
     <!--Grid row-->
     <div class="row">
       <!--Grid column-->
@@ -134,6 +134,7 @@
             <button
               type="button"
               class="btn btn-primary btn-block waves-effect waves-light"
+              v-on:click="order()"
             >
               Order
             </button>
@@ -146,28 +147,27 @@
     <!--Grid row-->
   </section>
   <!--Section: Block Content-->
+  
+<div v-else><SignInSignUp /></div>
+
 </template>
 
 
 <script>
 import CartService from "@/services/CartService";
+import AuthService from "@/services/AuthService";
+import SignInSignUp from "@/components/SignIn_SignUp.vue";
 
 export default {
   data() {
     return {
-      items: [
-        /*  
-        {title:'Lenovo', description:'Page 1', price:'100'},
-        {title:'Samsung', description:'Page 1', price:'100'},
-        {title:'Nokia', description:'Page 1', price:'100'},
-        {title:'Apple', description:'Page 1', price:'100'},
-        {title:'Huawei', description:'Page 1', price:'100'},
-        {title:'Xiaomi', description:'Page 1.', price:'100'},
-        {title:'Accer', description:'Page 1.', price:'100'},
-        {title:'Assus', description:'Page 1.', price:'100'}
-      */
-      ],
+      items: [],
+      userLoggedIn: false,
     };
+  },
+
+  components: {
+    SignInSignUp,
   },
 
   methods: {
@@ -181,24 +181,20 @@ export default {
 
     increaseItemQuantity(id) {
       CartService.addCartItem(id)
-        .then((response) => console.log(response))
+        .then((response) => console.log(response),  this.getItems(), location.reload())
         .catch((error) => {
           console.log(error);
         });
 
-      this.getItems();
-      location.reload();
     },
 
     decreaseItemQuantity(id) {
       CartService.removeCartItem(id)
-        .then((response) => console.log(response))
+        .then((response) => console.log(response),  this.getItems(), location.reload())
         .catch((error) => {
           console.log(error);
-        });
-
-      this.getItems();
-      location.reload();
+        });   
+ 
     },
 
     cartPriceValue() {
@@ -211,10 +207,30 @@ export default {
 
       return totalCartPrice.toFixed(2);
     },
+
+    isUserLogedIn() {
+      AuthService.isUserLogedIn()
+        .then((response) => (this.userLoggedIn = response.data))
+        .catch((error) => {
+          console.log(error);
+        });
+    },
+
+    order(){
+        CartService.order()
+        .then((response) => console.log(response), location.reload())
+        .catch((error) => {
+          console.log(error);
+        });
+
+    }
   },
 
   beforeMount() {
-    this.getItems();
+    this.isUserLogedIn();
+
+     setTimeout(() => { this.getItems() }, 400);
+   
   },
 };
 </script>

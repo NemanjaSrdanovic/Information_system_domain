@@ -42,16 +42,30 @@
         </form>
 
         <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
-          <li class="nav-item">
-            <router-link class="nav-link active" to="/account"
-              >Account</router-link
-            >
+          <li v-if="employeeLoggedIn" class="nav-item">
+            <router-link class="nav-link active" to="/account">
+            <span class="d-none d-sm-inline"><i class="fas fa-tachometer-alt"></i> Dashboard</span>
+            </router-link>
           </li>
-          <li class="nav-item">
-            <router-link class="nav-link active" to="/login">Login</router-link>
+          <li v-if="!userLoggedIn && !employeeLoggedIn" class="nav-item">
+            <router-link class="nav-link active d-flex flex-column" to="/login">
+              <span class="d-none d-sm-inline"><i class="fas fa-sign-in-alt"></i> Log in</span>
+            </router-link>
           </li>
-          <li class="nav-item">
-            <router-link class="nav-link active" to="/cart">Cart</router-link>
+
+          <li v-if="userLoggedIn" class="nav-item">
+            <router-link class="nav-link active" to="/cart">        
+            <span class="d-none d-sm-inline"> <i class="fas fa-shopping-cart"></i> Cart</span>
+            </router-link>
+          </li>
+          <li
+            v-if="userLoggedIn || employeeLoggedIn"
+            class="nav-item"
+            v-on:click="logout()"
+          >
+            <router-link class="nav-link active" to="/">
+            <span class="d-none d-sm-inline"><i class="fas fa-sign-out-alt"></i> Log out</span>
+            </router-link>
           </li>
         </ul>
       </div>
@@ -60,10 +74,46 @@
 </template>
 
 <script>
-//import axios from 'axios'
+import AuthService from "@/services/AuthService";
 
 export default {
-  name: "Navbar",
+  data() {
+    return {
+      userLoggedIn: false,
+      employeeLoggedIn: false,
+    };
+  },
+
+  methods: {
+    isUserLogedIn() {
+      AuthService.isUserLogedIn()
+        .then((response) => (this.userLoggedIn = response.data))
+        .catch((error) => {
+          console.log(error);
+        });
+    },
+
+    isEmployeeLogedIn() {
+      AuthService.isEmployeeLogedIn()
+        .then((response) => (this.employeeLoggedIn = response.data))
+        .catch((error) => {
+          console.log(error);
+        });
+    },
+
+    logout() {
+      AuthService.logout()
+        .then((response) => console.log(response), location.reload())
+        .catch((error) => {
+          console.log(error);
+        });
+    },
+  },
+
+  beforeMount() {
+    this.isUserLogedIn();
+    this.isEmployeeLogedIn();
+  },
 };
 </script>
 

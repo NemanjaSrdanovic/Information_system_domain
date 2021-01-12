@@ -14,6 +14,7 @@
                   placeholder="Name"
                   tabindex="10"
                   required
+                  v-model="name"
                 />
               </div>
 
@@ -25,6 +26,7 @@
                   placeholder="E-Mail"
                   tabindex="10"
                   required
+                  v-model="email"
                 />
               </div>
 
@@ -35,6 +37,7 @@
                   name=""
                   placeholder="Password"
                   required
+                  v-model="password"
                 />
               </div>
 
@@ -64,7 +67,7 @@
 
               <div class="row" style="justify-content: center">
                 <div class="col-lg-6 mb-5">
-                  <button type="button" class="btn btn-primary btn-block">
+                  <button type="button" class="btn btn-primary btn-block" v-on:click="register()">
                     Sign up
                   </button>
                 </div>
@@ -83,6 +86,38 @@
     </div>
   </section>
 </template>
+
+
+
+<script>
+
+import AuthService from "@/services/AuthService";
+
+export default {
+  data(){
+    return{
+      name:'',
+      email:'',
+      password:''
+    };
+  },
+  methods:{
+
+    register(){
+
+        AuthService.register(this.email,this.password, this.name)
+        .then((response) => console.log(response), window.location.href = '/login')
+        .catch((error) => {
+          console.log(error);
+        });
+
+    }
+  }
+}
+</script>
+
+
+
 
 <style scoped>
 .card {

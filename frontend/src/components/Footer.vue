@@ -33,21 +33,31 @@
             Pages
           </h5>
           <p>
-            <router-link class="nav-link active" to="/account"
-              >Account</router-link
+            <router-link
+              v-if="employeeLoggedIn"
+              class="nav-link active"
+              to="/account"
+              >Dashboard</router-link
             >
           </p>
           <p>
-            <router-link class="nav-link active" to="/login">Login</router-link>
+            <router-link
+              v-if="!userLoggedIn && !employeeLoggedIn"
+              class="nav-link active"
+              to="/login"
+              >Login</router-link
+            >
           </p>
           <p>
-            <router-link class="nav-link active" to="/cart">Cart</router-link>
+            <router-link v-if="userLoggedIn" class="nav-link active" to="/cart"
+              >Cart</router-link
+            >
           </p>
         </div>
 
         <div class="col-md-3 col-lg-2 col-xl-2 mx-auto mt-3">
           <h5
-            class="text-uppercase mb-4"
+            class="text-uppercase mb-2"
             style="color: #339bff; font-weight: bold"
           >
             Contact
@@ -68,13 +78,56 @@
 </template>
 
 <script>
-export default {};
+import AuthService from "@/services/AuthService";
+
+export default {
+  data() {
+    return {
+      userLoggedIn: false,
+      employeeLoggedIn: false,
+    };
+  },
+
+  methods: {
+    isUserLogedIn() {
+      AuthService.isUserLogedIn()
+        .then((response) => (this.userLoggedIn = response.data))
+        .catch((error) => {
+          console.log(error);
+        });
+    },
+
+    isEmployeeLogedIn() {
+      AuthService.isEmployeeLogedIn()
+        .then((response) => (this.employeeLoggedIn = response.data))
+        .catch((error) => {
+          console.log(error);
+        });
+    },
+  },
+
+  beforeMount() {
+    this.isUserLogedIn();
+    this.isEmployeeLogedIn();
+  },
+};
 </script>
 
 <style>
+
+html,body{
+width: 100%;
+height: 100%;
+margin: 0;
+padding: 0;
+overflow-x: hidden;
+min-width:100%; 
+}
+
 footer {
   position: absolute;
   bottom: 0;
   width: 100%;
+  
 }
 </style>

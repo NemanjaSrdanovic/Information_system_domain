@@ -8,11 +8,14 @@ export default {
 
     addCartItem(itemId) {
 
-        console.log(itemId)
         return Api().post('/cartItem/' + itemId);
     },
 
     removeCartItem(itemId) {
         return Api().post('/removeCartItem/' + itemId);
+    },
+
+    order(){
+        return Api().post('/order');
     }
 }

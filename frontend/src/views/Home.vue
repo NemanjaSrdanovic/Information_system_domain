@@ -2,7 +2,7 @@
   <div class="home">
     <Carousel/>
     <h3></h3>
-    <h1 style="text-align: center; color:#ffff;">Products</h1>
+    <h1 style="text-align: center; text-transform: uppercase; color:#ffff;">Products</h1>
     <h3></h3>
     <ProductGrid/>
 
