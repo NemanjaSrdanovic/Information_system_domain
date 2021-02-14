@@ -49,13 +49,21 @@
             >
           </p>
           <p>
+            <router-link class="nav-link active" to="/migrate"
+              >Migrate</router-link
+            >
+          </p>
+          <p>
             <router-link v-if="userLoggedIn" class="nav-link active" to="/cart"
               >Cart</router-link
             >
           </p>
 
           <p>
-            <router-link v-if="userLoggedIn" class="nav-link active" to="/user_account"
+            <router-link
+              v-if="userLoggedIn"
+              class="nav-link active"
+              to="/user_account"
               >Account</router-link
             >
           </p>
@@ -120,20 +128,19 @@ export default {
 </script>
 
 <style>
-
-html,body{
-width: 100%;
-height: 100%;
-margin: 0;
-padding: 0;
-overflow-x: hidden;
-min-width:100%; 
+html,
+body {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+  min-width: 100%;
 }
 
 footer {
   position: absolute;
   bottom: 0;
   width: 100%;
-  
 }
 </style>

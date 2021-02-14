@@ -54,6 +54,12 @@
             </router-link>
           </li>
 
+          <li v-if="!migrated" class="nav-item">
+            <router-link class="nav-link active d-flex flex-column" to="/migrate">
+              <span class="d-none d-sm-inline"><i class="fas fa-random"></i> Migrate</span>
+            </router-link>
+          </li>
+
           <li v-if="!userLoggedIn && !employeeLoggedIn" class="nav-item">
             <router-link class="nav-link active d-flex flex-column" to="/login">
               <span class="d-none d-sm-inline"><i class="fas fa-sign-in-alt"></i> Log in</span>
@@ -82,12 +88,15 @@
 
 <script>
 import AuthService from "@/services/AuthService";
+import MigrationService from "@/services/MigrationService";
+
 
 export default {
   data() {
     return {
       userLoggedIn: false,
       employeeLoggedIn: false,
+      migrated: false
     };
   },
 
@@ -115,11 +124,21 @@ export default {
           console.log(error);
         });
     },
+
+        isMigrated() {
+      MigrationService.isMigrated()
+        .then((response) => (this.migrated = response.data))
+        .catch((error) => {
+          console.log(error);
+        });
+    },
+    
   },
 
   beforeMount() {
     this.isUserLogedIn();
     this.isEmployeeLogedIn();
+    this.isMigrated();
   },
 };
 </script>

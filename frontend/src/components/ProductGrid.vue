@@ -131,7 +131,7 @@ export default {
   beforeMount() {
     this.getProducts();
    
-    setTimeout(() => {   this.setPageItems() }, 400);
+    setTimeout(() => {   this.setPageItems() }, 800);
   },
 };
 </script>

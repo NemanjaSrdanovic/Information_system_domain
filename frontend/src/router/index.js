@@ -2,6 +2,7 @@ import Vue from 'vue'
 import VueRouter from 'vue-router'
 import Home from '@/views/Home.vue'
 import Login from '@/views/Login.vue' 
+import Migrate from '@/views/Migrate.vue'
 import Register from '@/views/Register.vue'
 import Dashboard from '@/views/Dashboard.vue'
 import Account from '@/views/Account.vue'  
@@ -39,6 +40,11 @@ Axios.defaults.baseURL = 'http://localhost:8000/api/';
     path: '/register',
     name: 'Register',
     component: Register,
+  },
+  {
+    path: '/migrate',
+    name: 'Migrate',
+    component: Migrate,
   },
   {
     path: '/login_or_register',
