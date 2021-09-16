@@ -22,8 +22,8 @@ Conceptual Modeling (of the chosen reality domain) which includes:
 • (large-scale) Business Model Outline/Description <br/>
 • Entity-Relationship model (Chen notation) <br/>
 • Use-Case Design (3 main and 2 elaborate Use-Cases)<br/>
-&nbsp;&nbsp;	• Detailed textual description<br/>
-&nbsp;&nbsp;	• Graphical representation of dynamics (UML Activity diagram or BPMN) <br/>
+&nbsp;&nbsp;&nbsp;	• Detailed textual description<br/>
+&nbsp;&nbsp;&nbsp;	• Graphical representation of dynamics (UML Activity diagram or BPMN) <br/>
 
 
 *Elaborate reporting / data analysis use-case must join at least 3 entities
@@ -34,18 +34,18 @@ Conceptual Modeling (of the chosen reality domain) which includes:
 
 
 • Configuration of Infrastructure <br/>
-	• IS container composition and network isolation<br/>
-	• Secure deployment (https, port exposure) <br/>
+&nbsp;&nbsp;&nbsp;	• IS container composition and network isolation<br/>
+&nbsp;&nbsp;&nbsp;	• Secure deployment (https, port exposure) <br/>
 
 • Logical/Physical database design <br/>
-	• Relational model and normalization <br/>
-	• Implementation with relational DBMS <br/>
+&nbsp;&nbsp;&nbsp;	• Relational model and normalization <br/>
+&nbsp;&nbsp;&nbsp;	• Implementation with relational DBMS <br/>
 
 • Data import <br/>
-	• Filling of tables via a programming language (e.g. Java and JDBC, HTTP/REST,…)<br/>
+&nbsp;&nbsp;&nbsp;	• Filling of tables via a programming language (e.g. Java and JDBC, HTTP/REST,…)<br/>
 
 • Implementation Web system (relational DBMS) <br/>
-	• Realization of 2 use cases per team member. A main business use case (needs to create some data) and an elaborate
+&nbsp;&nbsp;&nbsp;	• Realization of 2 use cases per team member. A main business use case (needs to create some data) and an elaborate
 		reporting / data analysis use case (needs to reflect the data created by the main use case) per team member.<br/>
 
 
@@ -54,12 +54,12 @@ Conceptual Modeling (of the chosen reality domain) which includes:
 
 
 • NoSQL Database design <br/>
-	• NoSQL design (collections, documents, indices, …) <br/>
-	• Explain why your chosen design is the best performing for the implemented use cases (scalability, read/write ratio, …) <br/>
-	• Show and compare the SELECT statements of both elaborate use cases from M2 to MongoDB query statements <br/>
+&nbsp;&nbsp;&nbsp;	• NoSQL design (collections, documents, indices, …) <br/>
+&nbsp;&nbsp;&nbsp;	• Explain why your chosen design is the best performing for the implemented use cases (scalability, read/write ratio, …) <br/>
+&nbsp;&nbsp;&nbsp;	• Show and compare the SELECT statements of both elaborate use cases from M2 to MongoDB query statements <br/>
 
 •  Data migration (5 points)<br/>
-	• Transfer of data via programming language (e.g. Java, Python, Ruby, …)<br/>
+&nbsp;&nbsp;&nbsp;	• Transfer of data via programming language (e.g. Java, Python, Ruby, …)<br/>
 
 •  Implementation IS (NoSQL) (5 points)<br/>
-	• Realization of all Use-Cases from Milestone 2 based on NoSQL DBMS<br/>
+&nbsp;&nbsp;&nbsp;	• Realization of all Use-Cases from Milestone 2 based on NoSQL DBMS<br/>
