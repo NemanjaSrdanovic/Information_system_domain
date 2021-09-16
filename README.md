@@ -55,7 +55,7 @@ Conceptual Modeling (of the chosen reality domain) which includes:
 
 • NoSQL Database design <br/>
 &nbsp;&nbsp;&nbsp;	• NoSQL design (collections, documents, indices, …) <br/>
-&nbsp;&nbsp;&nbsp;	• Explain why your chosen design is the best performing for the implemented use cases (scalability, read/write ratio, …) <br/>
+&nbsp;&nbsp;&nbsp;	• Explain why your chosen design is the best performing for the implemented use cases (scalability, read/write ratio)<br/>
 &nbsp;&nbsp;&nbsp;	• Show and compare the SELECT statements of both elaborate use cases from M2 to MongoDB query statements <br/>
 
 •  Data migration (5 points)<br/>
