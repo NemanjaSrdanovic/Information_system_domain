@@ -1,16 +1,16 @@
 # Description
 
 This project introduces the following topics:
-• Data Engineering (Parallel and distributed DBMS, Object-relational and OO DBMS, Semi-structuriered modelling, NoSQL DBMS, Data integration)
-• Web Engineering (Virtualization, Containertechnology, Cloudcomputing)
-• Security Engineering (Basic security services, encryption, security protocols)
+• Data Engineering (Parallel and distributed DBMS, Object-relational and OO DBMS, Semi-structuriered modelling, NoSQL DBMS, Data integration) <br/>
+• Web Engineering (Virtualization, Containertechnology, Cloudcomputing)<br/>
+• Security Engineering (Basic security services, encryption, security protocols)<br/>
 
 
 In practice this includes:
 
-• Specification of an Information System
-• Implementation IS based on relational DBMS
-• Migration Relational-NoSQL
+• Specification of an Information System<br/>
+• Implementation IS based on relational DBMS<br/>
+• Migration Relational-NoSQL<br/>
 
 
 The implementation is split into three Milestones:
@@ -19,11 +19,11 @@ The implementation is split into three Milestones:
  ### Milestone 1 (Specification of IS) ###
 
 Conceptual Modeling (of the chosen reality domain) which includes:
-• (large-scale) Business Model Outline/Description 
-• Entity-Relationship model (Chen notation) 
-• Use-Case Design (3 main and 2 elaborate Use-Cases)
-	• Detailed textual description (1 point)
-	• Graphical representation of dynamics (UML Activity diagram or BPMN) 
+• (large-scale) Business Model Outline/Description <br/>
+• Entity-Relationship model (Chen notation) <br/>
+• Use-Case Design (3 main and 2 elaborate Use-Cases)<br/>
+	• Detailed textual description (1 point)<br/>
+	• Graphical representation of dynamics (UML Activity diagram or BPMN) <br/>
 
 
 *Elaborate reporting / data analysis use-case must join at least 3 entities
