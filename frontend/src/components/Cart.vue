@@ -60,7 +60,7 @@
                             class="btn btn-primary"
                             type="button"
                             id="inputGroupFileAddon04"
-                            v-on:click="increaseItemQuantity(item.itemId)"
+                            onclick="increaseItemQuantity(item.itemId)"
                           >
                             +
                           </button>
