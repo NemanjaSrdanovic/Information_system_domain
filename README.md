@@ -22,8 +22,8 @@ Conceptual Modeling (of the chosen reality domain) which includes:
 • (large-scale) Business Model Outline/Description <br/>
 • Entity-Relationship model (Chen notation) <br/>
 • Use-Case Design (3 main and 2 elaborate Use-Cases)<br/>
-	• Detailed textual description (1 point)<br/>
-	• Graphical representation of dynamics (UML Activity diagram or BPMN) <br/>
+&nbsp;&nbsp;	• Detailed textual description<br/>
+&nbsp;&nbsp;	• Graphical representation of dynamics (UML Activity diagram or BPMN) <br/>
 
 
 *Elaborate reporting / data analysis use-case must join at least 3 entities
