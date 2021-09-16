@@ -33,33 +33,33 @@ Conceptual Modeling (of the chosen reality domain) which includes:
 ### Milestone 2 (: Implementation of IS based on relational DBMS) ###
 
 
-• Configuration of Infrastructure 
-	• IS container composition and network isolation
-	• Secure deployment (https, port exposure) 
+• Configuration of Infrastructure <br/>
+	• IS container composition and network isolation<br/>
+	• Secure deployment (https, port exposure) <br/>
 
-• Logical/Physical database design 
-	• Relational model and normalization 
-	• Implementation with relational DBMS 
+• Logical/Physical database design <br/>
+	• Relational model and normalization <br/>
+	• Implementation with relational DBMS <br/>
 
-• Data import 
-	• Filling of tables via a programming language (e.g. Java and JDBC, HTTP/REST,…)
+• Data import <br/>
+	• Filling of tables via a programming language (e.g. Java and JDBC, HTTP/REST,…)<br/>
 
-• Implementation Web system (relational DBMS) 
+• Implementation Web system (relational DBMS) <br/>
 	• Realization of 2 use cases per team member. A main business use case (needs to create some data) and an elaborate
-		reporting / data analysis use case (needs to reflect the data created by the main use case) per team member.
+		reporting / data analysis use case (needs to reflect the data created by the main use case) per team member.<br/>
 
 
 
 ### Milestone 3 (Migration Relational-NoSQL) ###
 
 
-• NoSQL Database design 
-	• NoSQL design (collections, documents, indices, …) 
-	• Explain why your chosen design is the best performing for the implemented use cases (scalability, read/write ratio, …) 
-	•  Show and compare the SELECT statements of both elaborate use cases from M2 to MongoDB query statements 
+• NoSQL Database design <br/>
+	• NoSQL design (collections, documents, indices, …) <br/>
+	• Explain why your chosen design is the best performing for the implemented use cases (scalability, read/write ratio, …) <br/>
+	• Show and compare the SELECT statements of both elaborate use cases from M2 to MongoDB query statements <br/>
 
-•  Data migration (5 points)
-	• Transfer of data via programming language (e.g. Java, Python, Ruby, …)
+•  Data migration (5 points)<br/>
+	• Transfer of data via programming language (e.g. Java, Python, Ruby, …)<br/>
 
-•  Implementation IS (NoSQL) (5 points)
-	• Realization of all Use-Cases from Milestone 2 based on NoSQL DBMS
+•  Implementation IS (NoSQL) (5 points)<br/>
+	• Realization of all Use-Cases from Milestone 2 based on NoSQL DBMS<br/>
