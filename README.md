@@ -62,9 +62,9 @@ Conceptual Modeling (of the chosen reality domain) which includes:
 <details>
 <summary>NoSQL Database design</summary>
 <p>
-+ <summary>NoSQL design (collections, documents, indices, …)</summary>
-+ <summary>Explain why your chosen design is the best performing for the implemented use cases (scalability, read/write ratio)</summary>
-+ <summary>Show and compare the SELECT statements of both elaborate use cases from M2 to MongoDB query statements</summary>
+<summary>NoSQL design (collections, documents, indices, …)</summary>
+<summary>Explain why your chosen design is the best performing for the implemented use cases (scalability, read/write ratio)</summary>
+<summary>Show and compare the SELECT statements of both elaborate use cases from M2 to MongoDB query statements</summary>
 </p>
 </details>
 
@@ -72,7 +72,7 @@ Conceptual Modeling (of the chosen reality domain) which includes:
 <details>
 <summary>Data migration</summary>
 <p>
-+ <summary>Transfer of data via programming language (e.g. Java, Python, Ruby, …)</summary>
+<summary>Transfer of data via programming language (e.g. Java, Python, Ruby, …)</summary>
 </p>
 </details>
 
@@ -80,7 +80,7 @@ Conceptual Modeling (of the chosen reality domain) which includes:
 <details>
 <summary>Implementation IS (NoSQL)</summary>
 <p>
-+ <summary>Realization of all Use-Cases from Milestone 2 based on NoSQL DBMS</summary>
+<summary>Realization of all Use-Cases from Milestone 2 based on NoSQL DBMS</summary>
 </p>
 </details>
 
