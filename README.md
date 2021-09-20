@@ -24,16 +24,22 @@ The implementation is split into three Milestones:
 
  ### Milestone 1 (Specification of IS) ###
 
-Conceptual Modeling (of the chosen reality domain) which includes:
-• (large-scale) Business Model Outline/Description <br/>
-• Entity-Relationship model (Chen notation) <br/>
-• Use-Case Design (3 main and 2 elaborate Use-Cases)<br/>
-&nbsp;&nbsp;&nbsp;	• Detailed textual description<br/>
-&nbsp;&nbsp;&nbsp;	• Graphical representation of dynamics (UML Activity diagram or BPMN) <br/>
+
+<details>
+<summary>Conceptual Modeling (of the chosen reality domain) </summary>
+<p>
+<summary>(large-scale) Business Model Outline/Description</summary>
+<summary>Entity-Relationship model (Chen notation)</summary>
+<summary>Use-Case Design (3 main and 2 elaborate Use-Cases)</summary>
+	+ <summary>Detailed textual description</summary>
+	+ <summary>Graphical representation of dynamics (UML Activity diagram or BPMN)</summary>
+
 
 
 *Elaborate reporting / data analysis use-case must join at least 3 entities
 
+</p>
+</details>
 
 
 ### Milestone 2 (: Implementation of IS based on relational DBMS) ###
