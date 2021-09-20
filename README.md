@@ -1,4 +1,6 @@
-# Description
+# Information system domain
+
+## Project description
 
 This project introduces the following topics:
 • Data Engineering (Parallel and distributed DBMS, Object-relational and OO DBMS, Semi-structuriered modelling, NoSQL DBMS, Data integration) <br/>
@@ -11,6 +13,10 @@ In practice this includes:
 • Specification of an Information System<br/>
 • Implementation IS based on relational DBMS<br/>
 • Migration Relational-NoSQL<br/>
+
+
+
+## Project implemetation
 
 
 The implementation is split into three Milestones:
@@ -63,3 +69,14 @@ Conceptual Modeling (of the chosen reality domain) which includes:
 
 •  Implementation IS (NoSQL) (5 points)<br/>
 &nbsp;&nbsp;&nbsp;	• Realization of all Use-Cases from Milestone 2 based on NoSQL DBMS<br/>
+
+
+
+## Project technology
+
+**Programming Language**: Java, JavaScript, SQL, MongoDB <br/>  
+**Framework**: Vue, Spring Boot <br/>
+**Build tool**: Maven <br/>
+**Containerization**: Docker <br/>
+**Securing the source code**: GitLab <br/>
+
