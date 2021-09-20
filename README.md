@@ -115,8 +115,9 @@ The implementation is split into three Milestones:
 
 ## Project technology
 
-**Programming Language**: Java, JavaScript, SQL, MongoDB
+**Programming Language**: Java, JavaScript <br/>
 **Framework**: Vue, Spring Boot <br/>
+**Database**: SQL, MongoDB
 **Build tool**: Maven <br/>
 **Containerization**: Docker <br/>
 **Securing the source code**: GitLab <br/>
