@@ -39,20 +39,39 @@ Conceptual Modeling (of the chosen reality domain) which includes:
 ### Milestone 2 (: Implementation of IS based on relational DBMS) ###
 
 
-• Configuration of Infrastructure <br/>
-&nbsp;&nbsp;&nbsp;	• IS container composition and network isolation<br/>
-&nbsp;&nbsp;&nbsp;	• Secure deployment (https, port exposure) <br/>
+<details>
+<summary>Configuration of Infrastructure</summary>
+<p>
+<summary>IS container composition and network isolation</summary>
+<summary>Secure deployment (https, port exposure)</summary>
+</p>
+</details>
 
-• Logical/Physical database design <br/>
-&nbsp;&nbsp;&nbsp;	• Relational model and normalization <br/>
-&nbsp;&nbsp;&nbsp;	• Implementation with relational DBMS <br/>
 
-• Data import <br/>
-&nbsp;&nbsp;&nbsp;	• Filling of tables via a programming language (e.g. Java and JDBC, HTTP/REST,…)<br/>
+<details>
+<summary>Logical/Physical database design</summary>
+<p>
+<summary>Relational model and normalization</summary>
+<summary>Implementation with relational DBMS</summary>
+</p>
+</details>
 
-• Implementation Web system (relational DBMS) <br/>
-&nbsp;&nbsp;&nbsp;	• Realization of 2 use cases per team member. A main business use case (needs to create some data) and an elaborate
-		reporting / data analysis use case (needs to reflect the data created by the main use case) per team member.<br/>
+
+<details>
+<summary>Data import</summary>
+<p>
+<summary>Filling of tables via a programming language (e.g. Java and JDBC, HTTP/REST,…)</summary>
+</p>
+</details>
+
+
+<details>
+<summary>Implementation Web system (relational DBMS)</summary>
+<p>
+<summary>Realization of 2 use cases per team member. A main business use case (needs to create some data) and an elaborate
+		reporting / data analysis use case (needs to reflect the data created by the main use case) per team member</summary>
+</p>
+</details>
 
 
 
