@@ -31,10 +31,11 @@ The implementation is split into three Milestones:
 <summary>(large-scale) Business Model Outline/Description</summary>
 <summary>Entity-Relationship model (Chen notation)</summary>
 <summary>Use-Case Design (3 main and 2 elaborate Use-Cases)</summary>
-	* Detailed textual description
-	* Graphical representation of dynamics (UML Activity diagram or BPMN)
+&nbsp;&nbsp;	• Detailed textual description <br/>
+&nbsp;&nbsp;	• Graphical representation of dynamics (UML Activity diagram or BPMN) <br/>
 
-
+<br/>
+<br/>
 
 *Elaborate reporting / data analysis use-case must join at least 3 entities
 
