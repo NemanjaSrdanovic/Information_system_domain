@@ -59,10 +59,19 @@ Conceptual Modeling (of the chosen reality domain) which includes:
 ### Milestone 3 (Migration Relational-NoSQL) ###
 
 
-• NoSQL Database design <br/>
-&nbsp;&nbsp;&nbsp;	• NoSQL design (collections, documents, indices, …) <br/>
-&nbsp;&nbsp;&nbsp;	• Explain why your chosen design is the best performing for the implemented use cases (scalability, read/write ratio)<br/>
-&nbsp;&nbsp;&nbsp;	• Show and compare the SELECT statements of both elaborate use cases from M2 to MongoDB query statements <br/>
+<details>
+<summary>NoSQL Database design</summary>
+<p>
+
+
++ <summary>NoSQL design (collections, documents, indices, …)</summary>
++ <summary>Explain why your chosen design is the best performing for the implemented use cases (scalability, read/write ratio)</summary>
++ <summary>Show and compare the SELECT statements of both elaborate use cases from M2 to MongoDB query statements</summary>
+
+</p>
+</details>
+
+
 
 •  Data migration (5 points)<br/>
 &nbsp;&nbsp;&nbsp;	• Transfer of data via programming language (e.g. Java, Python, Ruby, …)<br/>
@@ -74,7 +83,7 @@ Conceptual Modeling (of the chosen reality domain) which includes:
 
 ## Project technology
 
-**Programming Language**: Java, JavaScript, SQL, MongoDB <br/>  
+**Programming Language**: Java, JavaScript, SQL, MongoDB
 **Framework**: Vue, Spring Boot <br/>
 **Build tool**: Maven <br/>
 **Containerization**: Docker <br/>
