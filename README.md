@@ -2,7 +2,7 @@
 
 ## Project description
 
-This project introduces the following topics:
+This project introduces the following topics: <br/>
 • Data Engineering (Parallel and distributed DBMS, Object-relational and OO DBMS, Semi-structuriered modelling, NoSQL DBMS, Data integration) <br/>
 • Web Engineering (Virtualization, Containertechnology, Cloudcomputing)<br/>
 • Security Engineering (Basic security services, encryption, security protocols)<br/>
